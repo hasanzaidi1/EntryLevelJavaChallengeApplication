@@ -2,9 +2,7 @@ package com.challenge.api.service;
 
 import com.challenge.api.model.Employee;
 import com.challenge.api.model.EmployeeImpl;
-
 import org.springframework.stereotype.Service;
-
 import java.time.Instant;
 import java.util.*;
 
@@ -29,7 +27,6 @@ public class EmployeeService {
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Employee not found"));
     }
-    
 
     public Employee createEmployee(String firstName, String lastName, Integer salary, Integer age, String jobTitle, String email, Instant contractHireDate) {
         Employee newEmployee = new EmployeeImpl(UUID.randomUUID(), firstName, lastName, salary, age, jobTitle, email, contractHireDate);
